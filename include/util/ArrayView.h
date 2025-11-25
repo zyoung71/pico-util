@@ -7,18 +7,19 @@ struct ArrayView
 {
     const T* data;
     size_t length;
-    inline constexpr T operator[](size_t get) const
+    inline constexpr T& operator[](size_t get) const
     {
         return data[get];
     }
 };
+
 template<typename T>
 struct ArrayView2D
 {
     const T* data;
     size_t rows, cols;
     
-    inline constexpr T operator()(size_t r, size_t c) const
+    inline constexpr T& operator()(size_t r, size_t c) const
     {
         return data[r * cols + c];
     }
@@ -28,7 +29,7 @@ struct ArrayView3D
 {
     const T* data;
     size_t rows, cols, depth;
-    inline constexpr T operator()(size_t r, size_t c, size_t d) const
+    inline constexpr T& operator()(size_t r, size_t c, size_t d) const
     {
         return data[r * cols * depth + c * depth + d];
     }
