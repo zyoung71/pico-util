@@ -13,6 +13,9 @@ public:
 
     inline bool Allow()
     {
+        if (pause_us == 0)
+            return true;
+            
         absolute_time_t now = to_us_since_boot(get_absolute_time());
         if (now - begin >= pause_us)
         {

@@ -5,6 +5,8 @@
 #include <util/CStringStream.h>
 #include <util/StringStreamLite.h>
 
+#include <util/BufferView.h>
+
 int main()
 {
     stdio_init_all();

@@ -35,7 +35,7 @@ struct ArrayView3D
     }
 };
 template<typename T, size_t l>
-inline constexpr ArrayView<T> make_view(const T (&array)[l])
+inline constexpr ArrayView<T> make_array_view(const T (&array)[l])
 {
     return ArrayView<T>{
         &array[0],
@@ -43,7 +43,7 @@ inline constexpr ArrayView<T> make_view(const T (&array)[l])
     };
 }
 template<typename T>
-inline constexpr ArrayView<T> make_view(const T* ptr, size_t length)
+inline constexpr ArrayView<T> make_array_view(const T* ptr, size_t length)
 {
     return ArrayView<T>{
         ptr,
@@ -51,7 +51,7 @@ inline constexpr ArrayView<T> make_view(const T* ptr, size_t length)
     };
 }
 template<typename T, size_t r, size_t c>
-inline constexpr ArrayView2D<T> make_view(const T (&array)[r][c])
+inline constexpr ArrayView2D<T> make_array_view(const T (&array)[r][c])
 {
     return ArrayView2D<T>{
         &array[0][0],
@@ -60,7 +60,7 @@ inline constexpr ArrayView2D<T> make_view(const T (&array)[r][c])
 }
 // Do not wrap a heap-allocated double-pointer array into the ArrayView.
 template<typename T>
-inline constexpr ArrayView2D<T> make_view(const T* ptr, size_t row, size_t col)
+inline constexpr ArrayView2D<T> make_array_view(const T* ptr, size_t row, size_t col)
 {
     return ArrayView2D<T>{
         ptr,
@@ -68,7 +68,7 @@ inline constexpr ArrayView2D<T> make_view(const T* ptr, size_t row, size_t col)
     };
 }
 template<typename T, size_t r, size_t c, size_t d>
-inline constexpr ArrayView3D<T> make_view(const T (&array)[r][c][d])
+inline constexpr ArrayView3D<T> make_array_view(const T (&array)[r][c][d])
 {
     return ArrayView3D<T>{
         &array[0][0][0],
@@ -77,7 +77,7 @@ inline constexpr ArrayView3D<T> make_view(const T (&array)[r][c][d])
 }
 // Do not wrap a heap-allocated triple-pointer array into the ArrayView
 template<typename T>
-inline constexpr ArrayView3D<T> make_view(const T* ptr, size_t row, size_t col, size_t dep)
+inline constexpr ArrayView3D<T> make_array_view(const T* ptr, size_t row, size_t col, size_t dep)
 {
     return ArrayView3D<T>{
         ptr,

@@ -11,6 +11,8 @@ ResultOptional<CStringStream<buffer_length>&, bool> CStringStream<buffer_length>
         result = snprintf(buff + string_length, buffer_length - string_length, "%s", item);
     else if constexpr (std::is_same_v<T, char>)
         result = snprintf(buff + string_length, buffer_length - string_length, "%c", item);
+    else if constexpr (std::is_same_v<T, int64_t>)
+        result = snprintf(buff + string_length, buffer_length - string_length, "%lli", item);
     else if constexpr (std::is_same_v<T, uint64_t>)
         result = snprintf(buff + string_length, buffer_length - string_length, "%llu", item);
     else if constexpr (std::is_unsigned_v<T>)

@@ -5,5 +5,7 @@
 class StringStreamBase
 {
 public:
+    virtual ~StringStreamBase() = default;
+
     virtual const char* GetCString() const = 0;
 };
