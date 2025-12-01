@@ -7,6 +7,7 @@ struct ArrayView
 {
     const T* data;
     size_t length;
+
     inline constexpr T& operator[](size_t get) const
     {
         return data[get];

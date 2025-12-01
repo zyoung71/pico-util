@@ -1,13 +1,12 @@
 if (NOT TARGET pico-util)
 
-    add_library(pico-util INTERFACE)
-
-    target_include_directories(pico-util INTERFACE
-        include
+    add_library(pico-util STATIC
+        src/StringLite.h
     )
 
-    target_include_directories(pico-util INTERFACE
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src> 
+    target_include_directories(pico-util PUBLIC
+        include
+        src # for tpp files
     )
 
 endif()
