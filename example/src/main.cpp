@@ -6,6 +6,7 @@
 #include <util/StringStreamLite.h>
 
 #include <util/BufferView.h>
+#include <util/UniqueArray.h>
 
 int main()
 {
