@@ -22,7 +22,9 @@ int main()
 
     ssl << 9 << 8 << 7 << "test";
 
-    UniqueArray<int> arr = nullptr;
+    std::unique_ptr<int[]> ar = std::make_unique<int[]>(5);
+    
+    UniqueArray<int> arr = make_unique_array<int>(std::move(ar), 5);
 
     while (1)
     {

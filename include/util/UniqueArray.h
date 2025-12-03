@@ -17,6 +17,7 @@ struct UniqueArray
         return array[get];
     }
 
+    inline constexpr UniqueArray(std::unique_ptr<T[]>&& arr, size_t len) : array(std::move(arr)), length(len) {}
     inline constexpr UniqueArray() : array(nullptr), length(0) {}
     inline constexpr UniqueArray(nullptr_t) : UniqueArray() {}
     inline constexpr UniqueArray(UniqueArray&& mov) : array(std::move(mov.array)), length(mov.length) {}
@@ -32,7 +33,7 @@ inline constexpr UniqueArray<T> make_unique_array(T (arr)[len])
 }
 
 template<typename T>
-inline constexpr UniqueArray<T> make_unique_array(std::unique_ptr<T[]>& arr, size_t len)
+inline constexpr UniqueArray<T> make_unique_array(std::unique_ptr<T[]>&& arr, size_t len)
 {
     return UniqueArray<T>{
         std::move(arr),
