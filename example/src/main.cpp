@@ -22,6 +22,8 @@ int main()
 
     ssl << 9 << 8 << 7 << "test";
 
+    UniqueArray<int> arr = nullptr;
+
     while (1)
     {
         printf("%s\n", css.GetCString());
