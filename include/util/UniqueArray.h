@@ -8,7 +8,11 @@ struct UniqueArray
     std::unique_ptr<T[]> array;
     size_t length;
 
-    inline constexpr T& operator[](size_t get) const
+    inline constexpr const T& operator[](size_t get) const
+    {
+        return array[get];
+    }
+    inline constexpr T& operator[](size_t get)
     {
         return array[get];
     }
@@ -37,10 +41,10 @@ inline constexpr UniqueArray<T> make_unique_array(std::unique_ptr<T[]>& arr, siz
 }
 
 template<typename T>
-inline constexpr UniqueArray<T> make_unique_array(T* arr, size_t len)
-{
+inline constexpr UniqueArray<T> make_unique_array_empty(size_t len)
+{   
     return UniqueArray<T>{
-        std::make_unique<T[]>(arr),
+        std::make_unique<T[]>(len),
         len
     };
 }
