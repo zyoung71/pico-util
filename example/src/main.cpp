@@ -7,6 +7,9 @@
 
 #include <util/BufferView.h>
 #include <util/UniqueArray.h>
+#include <util/ArraySupplier.h>
+
+#include <util/FilesystemTree.h>
 
 int main()
 {
@@ -25,6 +28,15 @@ int main()
     std::unique_ptr<int[]> ar = std::make_unique<int[]>(5);
     
     UniqueArray<int> arr = make_unique_array<int>(std::move(ar), 5);
+
+    FilesystemTree fs;
+    FilesystemNodeData user_folder = {"users", true};
+    fs.AddNode(user_folder);
+    fs.RemoveNode(user_folder);
+
+    ArraySupplier<int, 5> as;
+    as[0] = 0;
+    as[1] = 1;
 
     while (1)
     {
