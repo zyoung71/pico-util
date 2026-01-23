@@ -8,6 +8,7 @@
 #include <util/BufferView.h>
 #include <util/UniqueArray.h>
 #include <util/ArraySupplier.h>
+#include <util/ByteSplitter.h>
 
 #include <util/FilesystemTree.h>
 
@@ -33,6 +34,8 @@ int main()
     FilesystemNodeData user_folder = {"users", true};
     fs.AddNode(user_folder);
     fs.RemoveNode(user_folder);
+
+    ByteSplitter<uint32_t, uint8_t> split;
 
     ArraySupplier<int, 5> as;
     as[0] = 0;
