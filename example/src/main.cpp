@@ -41,6 +41,10 @@ int main()
     as[0] = 0;
     as[1] = 1;
 
+    // as.At<90>() = 7; // Will fail
+
+    // use At<idx>() for compile-time and runtime, use [idx] for only runtime
+
     while (1)
     {
         printf("%s\n", css.GetCString());
