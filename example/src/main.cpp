@@ -9,7 +9,7 @@
 #include <util/UniqueArray.h>
 #include <util/ArraySupplier.h>
 #include <util/ByteSplitter.h>
-
+#include <util/TimeHandler.h>
 #include <util/FilesystemTree.h>
 
 int main()
@@ -44,6 +44,11 @@ int main()
     // as.At<90>() = 7; // Will fail
 
     // use At<idx>() for compile-time and runtime, use [idx] for only runtime
+
+    TimeHandler th;
+    printf("Delta time: %d\n", th.Update());
+
+    th = TimeHandler(); // reset
 
     while (1)
     {
