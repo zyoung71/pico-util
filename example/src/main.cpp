@@ -11,10 +11,13 @@
 #include <util/ByteSplitter.h>
 #include <util/TimeHandler.h>
 #include <util/FilesystemTree.h>
+#include <util/Types.h>
 
 int main()
 {
     stdio_init_all();
+
+    MultiPtr<int, 2> int_ptr;
 
     CStringStream<256> css;
 
