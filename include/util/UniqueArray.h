@@ -19,7 +19,7 @@ struct UniqueArray
 
     inline constexpr UniqueArray(std::unique_ptr<T[]>&& arr, size_t len) : array(std::move(arr)), length(len) {}
     inline constexpr UniqueArray() : array(nullptr), length(0) {}
-    inline constexpr UniqueArray(nullptr_t) : UniqueArray() {}
+    inline constexpr UniqueArray(std::nullptr_t) : UniqueArray() {}
     inline constexpr UniqueArray(UniqueArray&& mov) : array(std::move(mov.array)), length(mov.length) {}
 };
 
