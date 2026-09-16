@@ -5,9 +5,11 @@ extern "C" {
 #endif
 
 #include <stddef.h>
-#include <stdint.h>
 
+#ifndef __cplusplus
+#include <stdint.h>
 typedef uint_least16_t char16_t;
+#endif
 
 size_t strlen16(const char16_t* str);
 
