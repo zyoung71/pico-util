@@ -12,6 +12,7 @@
 #include <util/TimeHandler.h>
 #include <util/FilesystemTree.h>
 #include <util/Types.h>
+#include <util/Char16.h>
 
 int main()
 {
@@ -52,6 +53,9 @@ int main()
     printf("Delta time: %d\n", th.Update());
 
     th = TimeHandler(); // reset
+
+    const char16_t* str16 = u"test";
+    size_t str16_len = strlen16(str16);
 
     while (1)
     {
