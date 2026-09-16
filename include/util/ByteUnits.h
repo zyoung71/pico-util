@@ -21,11 +21,11 @@ struct ByteUnitConverter
 
     constexpr uint64_t AsInt(ByteUnit unit) const
     {
-        return total_bytes >> (unit * 10);
+        return total_bytes >> (unit * 10U);
     }
 
     constexpr float AsDecimal(ByteUnit unit) const
     {
-        return total_bytes / (float)(1 << (unit * 10));
+        return total_bytes / (float)(1 << (unit * 10U));
     }
 };

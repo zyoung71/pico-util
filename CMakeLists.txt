@@ -4,7 +4,7 @@ if (NOT TARGET pico-util)
         src/util/StringLite.cpp
         src/util/FilesystemTree.cpp
         src/util/TimeHandler.cpp
-        src/util/Char16.cpp
+        src/util/Char16.c
     )
 
     target_include_directories(pico-util PUBLIC
