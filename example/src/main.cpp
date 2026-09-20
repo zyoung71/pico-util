@@ -12,7 +12,7 @@
 #include <util/TimeHandler.h>
 #include <util/FilesystemTree.h>
 #include <util/Types.h>
-#include <util/Char16.h>
+#include <util/Chars.h>
 
 int main()
 {
@@ -50,12 +50,15 @@ int main()
     // use At<idx>() for compile-time and runtime, use [idx] for only runtime
 
     TimeHandler th;
-    printf("Delta time: %d\n", th.Update());
+    printf("Delta time: %llu\n", th.Update());
 
     th = TimeHandler(); // reset
 
     const char16_t* str16 = u"test";
     size_t str16_len = strlen16(str16);
+
+    size_t bytes_used;
+    char32_t codepoint = utf8_decode("my text", &bytes_used);
 
     while (1)
     {
