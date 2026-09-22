@@ -1,4 +1,4 @@
-#include <util/StringLite.h>
+#include <util/StringLite.hpp>
 #include <cstring>
 
 StringLite::StringLite(const char* str)

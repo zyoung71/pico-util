@@ -1,6 +1,8 @@
-#include <util/CStringStream.h>
+#include <util/CStringStream.hpp>
 
 #include <cstring>
+#include <type_traits>
+#include <cstdint>
 
 template<size_t buffer_length>
 template<typename T>

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "StringStreamBase.h"
+#include "StringStreamBase.hpp"
 
 #include <string>
 

@@ -1,4 +1,4 @@
-#include <util/TimeHandler.h>
+#include <util/TimeHandler.hpp>
 
 absolute_time_t TimeHandler::Update()
 {

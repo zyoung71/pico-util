@@ -2,16 +2,16 @@
 #include <pico/stdlib.h>
 #include <stdio.h>
 
-#include <util/CStringStream.h>
-#include <util/StringStreamLite.h>
+#include <util/CStringStream.hpp>
+#include <util/StringStreamLite.hpp>
 
-#include <util/BufferView.h>
-#include <util/UniqueArray.h>
-#include <util/ArraySupplier.h>
-#include <util/ByteSplitter.h>
-#include <util/TimeHandler.h>
-#include <util/FilesystemTree.h>
-#include <util/Types.h>
+#include <util/BufferView.hpp>
+#include <util/UniqueArray.hpp>
+#include <util/ArraySupplier.hpp>
+#include <util/ByteSplitter.hpp>
+#include <util/TimeHandler.hpp>
+#include <util/FilesystemTree.hpp>
+#include <util/Types.hpp>
 #include <util/Chars.h>
 
 int main()

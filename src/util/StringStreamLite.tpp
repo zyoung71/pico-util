@@ -1,4 +1,4 @@
-#include <util/StringStreamLite.h>
+#include <util/StringStreamLite.hpp>
 
 template<typename T>
 StringStreamLite& StringStreamLite::operator<<(const T& item)

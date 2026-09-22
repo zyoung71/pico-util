@@ -6,6 +6,12 @@
 extern "C" {
 #endif
 
+#ifdef DEBUG
+#define LOG(...) printf(...)
+#else
+#define LOG(...)
+#endif
+
 #ifdef __cplusplus
 }
 #endif

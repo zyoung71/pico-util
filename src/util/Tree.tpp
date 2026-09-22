@@ -1,4 +1,4 @@
-#include <util/Tree.h>
+#include <util/Tree.hpp>
 
 #include <algorithm>
 

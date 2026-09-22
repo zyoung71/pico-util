@@ -16,4 +16,8 @@ if (NOT TARGET pico-util)
         hardware_rtc
     )
 
+    target_compile_definitions(pico-util PUBLIC
+        $<$<CONFIG:Debug>:DEBUG>
+    )
+
 endif()

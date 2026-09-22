@@ -1,10 +1,9 @@
 #pragma once
 
-#include "StringStreamBase.h"
-#include "ResultOptional.h"
+#include "StringStreamBase.hpp"
+#include "ResultOptional.hpp"
 
 #include <cstddef>
-#include <type_traits>
 
 template<size_t buffer_length>
 class CStringStream : public StringStreamBase
